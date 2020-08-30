@@ -1,0 +1,80 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled3.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyMruvqWoYg0wmc/hA2Sycg1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/A-lphonse/Python/blob/master/Data%20analysis%201\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0vXBieBzr1Z7",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "states = [' Alabama ' , 'Georgia!' , 'Georgia' , 'georgia''south carolina##' , 'West virginia?' ]"
+      ],
+      "execution_count": 16,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "OCsJzhPnsOuf",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "499ef98c-c476-4be5-f742-7690ccd006b1"
+      },
+      "source": [
+        "import re\n",
+        "def clean_strings ( states ): \n",
+        "      result = [] \n",
+        "      for value in states : \n",
+        "        value = value . strip () \n",
+        "        value = re . sub ( '[!#?]' , '' , value )\n",
+        "        value = value . title () \n",
+        "        result . append ( value ) \n",
+        "      return result \n",
+        "clean_strings ( states )      \n"
+      ],
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['Alabama', 'Georgia', 'Georgia', 'Georgiasouth Carolina', 'West Virginia']"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 17
+        }
+      ]
+    }
+  ]
+}
